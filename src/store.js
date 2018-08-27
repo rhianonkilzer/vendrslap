@@ -16,7 +16,10 @@ export default new Vuex.Store({
         haduouken: 100
       },
       items: []
-    })
+    }),
+    machine: {
+      name: "Vendr"
+    }
   },
   mutations: {
     setHealth(state, actualHealth) {
