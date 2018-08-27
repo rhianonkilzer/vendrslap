@@ -6,7 +6,10 @@
 
 <script>
 export default {
-  methods: {},
+  methods: {
+    
+  },
+
   computed: {
     machine() {
       return this.$store.state.machine;

@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// @ts-ignore
 import Slap from './views/Slap.vue'
+// @ts-ignore
 import Vendr from './views/Vendr.vue'
 
 
