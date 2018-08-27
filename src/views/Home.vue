@@ -9,7 +9,7 @@
       <button 
       v-for="(value, key) in target.attacks"
       :key="key"
-      @click="attack(value)"
+      @click="attack(key)"
       :disabled="dead"
       >{{key}}</button>
       <button @click="reset" v-if="dead">Reset</button>
@@ -29,17 +29,6 @@ export default {
   name: "home",
   data() {
     return {
-      target: {
-        health: 100,
-        name: "ScarCrow",
-        attacks: {
-          kick: 10,
-          slap: 1,
-          punch: 5,
-          haduouken: 100
-        },
-        items: []
-      },
       availableItems: [
         {
           id: 1,
@@ -50,8 +39,8 @@ export default {
     };
   },
   methods: {
-    attack(val) {
-      this.target.health -= val;
+    attack(attackType) {
+      this.$store.dispatch("attack", attackType);
     },
     reset() {
       this.target.health = 100;
@@ -64,6 +53,9 @@ export default {
     }
   },
   computed: {
+    target() {
+      return this.$store.state.target;
+    },
     dead() {
       return this.target.health <= 0;
     }
