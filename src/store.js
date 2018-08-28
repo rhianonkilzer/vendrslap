@@ -51,6 +51,6 @@ export default new Vuex.Store({
       let newHealth = state.target.health - state.target.attacks[payload]
       commit('setHealth', newHealth)
     },
-    // add new action here
+    // add new action here for vendr
   }
 })
